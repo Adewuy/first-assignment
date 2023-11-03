@@ -39,3 +39,33 @@ while(sentence[i] !== fullstop)
 }
 counter = counter + 1;
 console.log(counter)
+
+
+
+// Secound Task Solution 
+
+
+function sumOfDistinctElements(set1, set2) {
+    let distinctElements = [];
+    
+    set1.forEach((element) => {
+      if (!set2.includes(element)) {
+        distinctElements.push(element);
+      }
+    });
+    
+    set2.forEach((element) => {
+      if (!set1.includes(element)) {
+        distinctElements.push(element);
+      }
+    });
+    
+    return distinctElements.reduce((sum, element) => sum + element, 0);
+  }
+  
+  // Example usage:
+  const set1 = [3, 1, 7, 9];
+  const set2 = [2, 4, 1, 9, 3];
+  const result = sumOfDistinctElements(set1, set2);
+  console.log(result);  // Output: 13
+  
